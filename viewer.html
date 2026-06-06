@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell viewer-shell">
+      <section class="map-stage" aria-label="Event map">
+        <div id="map"></div>
+        <div class="map-notice" id="mapNotice">Loading map...</div>
+        <div class="map-toolbar" role="toolbar" aria-label="Map tools">
+          <button class="icon-button" id="zoomIn" type="button" title="Zoom in">
+            <i data-lucide="plus" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="zoomOut" type="button" title="Zoom out">
+            <i data-lucide="minus" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button active" id="fitMap" type="button" title="Fit event area">
+            <i data-lucide="scan" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="toggleBaseLayer" type="button" title="Switch to normal map" aria-pressed="false">
+            <i data-lucide="layers" aria-hidden="true"></i>
+          </button>
+        </div>
+      </section>
+
+      <aside class="side-panel viewer-panel" aria-label="Event places">
+        <button class="icon-button panel-toggle-button" id="togglePanel" type="button" title="Hide places" aria-pressed="true">
+          <i data-lucide="panel-right-close" aria-hidden="true"></i>
+        </button>
+        <header class="panel-header">
+          <div>
+            <p class="eyebrow">Event Map</p>
+            <h1>Places</h1>
+          </div>
+        </header>
+
+        <div class="search-row">
+          <i data-lucide="search" aria-hidden="true"></i>
+          <input id="placeSearch" type="search" placeholder="Search places">
+        </div>
+
+        <div class="place-list" id="placeList" aria-live="polite"></div>
+      </aside>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="./viewer.js"></script>
+  </body>
+</html>

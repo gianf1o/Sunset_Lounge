@@ -1,0 +1,287 @@
+{
+  "bounds": {
+    "southWest": {
+      "lat": 48.52132,
+      "lng": 9.33905
+    },
+    "northEast": {
+      "lat": 48.52768,
+      "lng": 9.34823
+    }
+  },
+  "places": [
+    {
+      "id": "7877fe52-25f3-4335-a10b-81c386abd9c6",
+      "type": "shop",
+      "name": "Tivanos Pizza",
+      "notes": "Pizza",
+      "logo": "assets/logos/Tivanos_Pizza.png",
+      "lat": 48.52305,
+      "lng": 9.34074,
+      "stock": [
+        {
+          "category": "food",
+          "name": "Pizza Margherita",
+          "price": "7,50"
+        },
+        {
+          "category": "food",
+          "name": "Pizza Prosciutto",
+          "price": "8,50"
+        },
+        {
+          "category": "drink",
+          "name": "Aperol",
+          "price": "5,00"
+        }
+      ]
+    },
+    {
+      "id": "8ba9dd63-a594-4a26-b5b0-f04c400567bd",
+      "type": "shop",
+      "name": "Rössle",
+      "notes": "Essen",
+      "logo": "assets/logos/Rössle.png",
+      "lat": 48.52307,
+      "lng": 9.34098,
+      "stock": [
+        {
+          "category": "food",
+          "name": "Wilde Kartoffeln",
+          "price": "6,00"
+        },
+        {
+          "category": "food",
+          "name": "Rote Wurst",
+          "price": "5,00"
+        },
+        {
+          "category": "drink",
+          "name": "Spritzer",
+          "price": "5,50"
+        }
+      ]
+    },
+    {
+      "id": "a458e1ac-28f2-4f2b-9031-cc6c28bbd77f",
+      "type": "shop",
+      "name": "Eisdiele La Dolce Vita",
+      "notes": "Eis",
+      "logo": "assets/logos/La_Dolce_Vita Small.png",
+      "lat": 48.52308,
+      "lng": 9.34124,
+      "stock": [
+        {
+          "category": "food",
+          "name": "1 Kugel",
+          "price": "2,00"
+        },
+        {
+          "category": "food",
+          "name": "2 Kugeln",
+          "price": "3,50"
+        },
+        {
+          "category": "food",
+          "name": "3 Kugeln",
+          "price": "5,50"
+        }
+      ]
+    },
+    {
+      "id": "bf380faa-6d6c-48d1-ad57-bb444de8768b",
+      "type": "shop",
+      "name": "Brennerei Walter",
+      "notes": "Drinks",
+      "logo": "assets/logos/Brennerei_Walter.png",
+      "lat": 48.52308,
+      "lng": 9.34185,
+      "stock": [
+        {
+          "category": "drink",
+          "name": "Birnen Schnaps",
+          "price": "3,00"
+        },
+        {
+          "category": "drink",
+          "name": "Kirschwasser",
+          "price": "3,00"
+        }
+      ]
+    },
+    {
+      "id": "1f95da56-c56e-48de-a926-0e2a17fe1d62",
+      "type": "shop",
+      "name": "Brennerei Straßer",
+      "notes": "Drinks",
+      "logo": "assets/logos/Brennere_Straßer.png",
+      "lat": 48.52307,
+      "lng": 9.34214,
+      "stock": [
+        {
+          "category": "drink",
+          "name": "Williams",
+          "price": "3,00"
+        },
+        {
+          "category": "drink",
+          "name": "Wein",
+          "price": "6,00"
+        }
+      ]
+    },
+    {
+      "id": "f13d7aa5-24b9-49f6-9c4f-1d1c120fe723",
+      "type": "shop",
+      "name": "Alte Schule",
+      "notes": "Essen",
+      "logo": "assets/logos/Alte_Schule.png",
+      "lat": 48.52303,
+      "lng": 9.34251,
+      "stock": [
+        {
+          "category": "food",
+          "name": "Snack",
+          "price": "5,00"
+        },
+        {
+          "category": "drink",
+          "name": "Sekt",
+          "price": "6,00"
+        }
+      ]
+    },
+    {
+      "id": "9a8097f5-1d9f-4f59-91d4-f49af441c1ee",
+      "type": "item",
+      "name": "Calverbühl",
+      "notes": "",
+      "logo": "",
+      "lat": 48.52251,
+      "lng": 9.34331,
+      "stock": []
+    },
+    {
+      "id": "b7b4f2ba-5c39-415e-b2e7-4cfd0a80523e",
+      "type": "parking",
+      "name": "Parkplatz am Gartenheim",
+      "notes": "",
+      "logo": "",
+      "lat": 48.52479,
+      "lng": 9.34488,
+      "stock": []
+    },
+    {
+      "id": "ba05a70b-d1df-474f-a38e-5bb36ff19fd8",
+      "type": "toilet",
+      "name": "Toiletten",
+      "notes": "",
+      "logo": "",
+      "lat": 48.52307,
+      "lng": 9.34374,
+      "stock": []
+    },
+    {
+      "id": "f3eb4f57-267a-431c-ab3a-935eba72c55c",
+      "type": "dj",
+      "name": "DJ",
+      "notes": "",
+      "logo": "",
+      "lat": 48.5229,
+      "lng": 9.34203,
+      "stock": []
+    }
+  ],
+  "annotations": [
+    {
+      "id": "61c935ca-e1e7-4227-8485-70d6c9526361",
+      "type": "arrow",
+      "name": "Arrow",
+      "notes": "",
+      "color": "#f3c84b",
+      "points": [
+        {
+          "lat": 48.52619,
+          "lng": 9.34652
+        },
+        {
+          "lat": 48.52667,
+          "lng": 9.34725
+        }
+      ]
+    },
+    {
+      "id": "416a4fe8-d804-4fec-8ae6-ec4d7f25023f",
+      "type": "text",
+      "name": "Mehr Parkplätze im Ort",
+      "notes": "",
+      "color": "#ffffff",
+      "text": "Mehr Parkplätze im Ort",
+      "anchor": "top-right",
+      "width": 170,
+      "height": 52,
+      "lat": 48.52623,
+      "lng": 9.34695
+    },
+    {
+      "id": "c38de7f2-cd50-4e4e-9303-01b9469a04b9",
+      "type": "text",
+      "name": "Text",
+      "notes": "",
+      "color": "#ffffff",
+      "text": "Straße gesperrt ab hier",
+      "anchor": "top-right",
+      "width": 160,
+      "height": 52,
+      "lat": 48.52377,
+      "lng": 9.34639
+    },
+    {
+      "id": "c81a7e73-c329-4fd1-abe6-fc453556fba6",
+      "type": "line",
+      "name": "Line",
+      "notes": "",
+      "color": "#b51a00",
+      "points": [
+        {
+          "lat": 48.52388,
+          "lng": 9.34615
+        },
+        {
+          "lat": 48.52372,
+          "lng": 9.34655
+        }
+      ]
+    },
+    {
+      "id": "cd288024-a0d7-402b-bece-7a7e2dc8f426",
+      "type": "line",
+      "name": "Line",
+      "notes": "",
+      "color": "#b51a00",
+      "points": [
+        {
+          "lat": 48.52289,
+          "lng": 9.34388
+        },
+        {
+          "lat": 48.52306,
+          "lng": 9.34408
+        }
+      ]
+    },
+    {
+      "id": "8049ea2f-942f-41a2-9342-e56a20addfb3",
+      "type": "text",
+      "name": "Straße gesperrt ab hier 2.",
+      "notes": "",
+      "color": "#ffffff",
+      "text": "Straße gesperrt ab hier",
+      "anchor": "top-left",
+      "width": 160,
+      "height": 52,
+      "lat": 48.52293,
+      "lng": 9.34408
+    }
+  ]
+}

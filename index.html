@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Event Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="map-stage" aria-label="Event map">
+        <div id="map"></div>
+        <div class="map-toolbar" role="toolbar" aria-label="Map tools">
+          <button class="icon-button active" id="selectMode" type="button" title="Select and edit places" aria-pressed="true">
+            <i data-lucide="mouse-pointer-2" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="addPlaceMode" type="button" title="Place item" aria-pressed="false">
+            <i data-lucide="map-pin-plus" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="addShopMode" type="button" title="Place shop" aria-pressed="false">
+            <i data-lucide="store" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="addDjMode" type="button" title="Place DJ" aria-pressed="false">
+            <i data-lucide="music-2" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="addParkingMode" type="button" title="Place parking" aria-pressed="false">
+            <i data-lucide="square-parking" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="addToiletMode" type="button" title="Place toilets" aria-pressed="false">
+            <i data-lucide="toilet" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="addLineMode" type="button" title="Draw line" aria-pressed="false">
+            <i data-lucide="slash" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="addArrowMode" type="button" title="Draw arrow" aria-pressed="false">
+            <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="addTextMode" type="button" title="Place text" aria-pressed="false">
+            <i data-lucide="type" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="zoomIn" type="button" title="Zoom in">
+            <i data-lucide="plus" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="zoomOut" type="button" title="Zoom out">
+            <i data-lucide="minus" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="fitMap" type="button" title="Fit event area">
+            <i data-lucide="scan" aria-hidden="true"></i>
+          </button>
+          <button class="icon-button" id="toggleBaseLayer" type="button" title="Switch to normal map" aria-pressed="false">
+            <i data-lucide="layers" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="status-pill" id="mapStatus">Select</div>
+      </section>
+
+      <aside class="side-panel" aria-label="Event places">
+        <header class="panel-header">
+          <div>
+            <p class="eyebrow">Event Map</p>
+            <h1>Places</h1>
+          </div>
+          <div class="panel-actions">
+            <button class="icon-button quiet" id="exportData" type="button" title="Export map data">
+              <i data-lucide="download" aria-hidden="true"></i>
+            </button>
+            <label class="icon-button quiet file-button" title="Import map data">
+              <i data-lucide="upload" aria-hidden="true"></i>
+              <input id="importData" type="file" accept="application/json">
+            </label>
+          </div>
+        </header>
+
+        <div class="search-row">
+          <i data-lucide="search" aria-hidden="true"></i>
+          <input id="placeSearch" type="search" placeholder="Search places">
+        </div>
+
+        <div class="place-list" id="placeList" aria-live="polite"></div>
+
+        <section class="editor-panel" id="editorPanel" aria-label="Selected place">
+          <form id="placeForm">
+            <div class="form-head">
+              <span class="type-badge" id="typeBadge">Item</span>
+              <button class="icon-button danger" id="deletePlace" type="button" title="Delete selected place">
+                <i data-lucide="trash-2" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <label>
+              <span>Name</span>
+              <input id="placeName" name="name" type="text" autocomplete="off" required>
+            </label>
+
+            <label>
+              <span>Notes</span>
+              <textarea id="placeNotes" name="notes" rows="3"></textarea>
+            </label>
+
+            <section class="logo-section" id="logoSection">
+              <label>
+                <span>Logo Path / URL</span>
+                <input id="placeLogo" name="logo" type="text" autocomplete="off" placeholder="assets/logos/example.png">
+              </label>
+              <div class="logo-actions">
+                <label class="logo-upload">
+                  <i data-lucide="image-plus" aria-hidden="true"></i>
+                  <span>Upload Logo</span>
+                  <input id="logoUpload" type="file" accept="image/*">
+                </label>
+                <button class="icon-button quiet danger" id="clearLogo" type="button" title="Remove logo">
+                  <i data-lucide="x" aria-hidden="true"></i>
+                </button>
+                <img class="logo-preview" id="logoPreview" alt="">
+              </div>
+            </section>
+
+            <div class="coordinate-grid">
+              <label>
+                <span>Latitude</span>
+                <input id="placeLat" name="lat" type="number" step="0.00001">
+              </label>
+              <label>
+                <span>Longitude</span>
+                <input id="placeLng" name="lng" type="number" step="0.00001">
+              </label>
+            </div>
+
+            <section class="annotation-section" id="annotationSection">
+              <label>
+                <span>Color</span>
+                <input id="annotationColor" name="annotationColor" type="color" value="#f3c84b">
+              </label>
+              <div class="text-options" id="textOptions">
+                <label>
+                  <span>Map Text</span>
+                  <textarea id="annotationText" name="annotationText" rows="3"></textarea>
+                </label>
+                <label>
+                  <span>Anchor</span>
+                  <select id="annotationAnchor" name="annotationAnchor">
+                    <option value="top-right">Top right</option>
+                    <option value="top-left">Top left</option>
+                  </select>
+                </label>
+                <div class="dimension-grid">
+                  <label>
+                    <span>Width</span>
+                    <input id="annotationWidth" name="annotationWidth" type="number" min="60" max="420" step="5">
+                  </label>
+                  <label>
+                    <span>Height</span>
+                    <input id="annotationHeight" name="annotationHeight" type="number" min="32" max="260" step="5">
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <section class="inventory-section" id="inventorySection">
+              <div class="section-title">
+                <h2>Shop Items</h2>
+                <button class="icon-button quiet" id="addStockItem" type="button" title="Add shop item">
+                  <i data-lucide="plus" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="stock-list" id="stockList"></div>
+            </section>
+
+            <button class="save-button" type="submit">
+              <i data-lucide="save" aria-hidden="true"></i>
+              Save
+            </button>
+          </form>
+        </section>
+      </aside>
+    </main>
+
+    <template id="stockRowTemplate">
+      <div class="stock-row">
+        <select class="stock-category" aria-label="Shop item category">
+          <option value="food">Essen</option>
+          <option value="drink">Drinks</option>
+        </select>
+        <input class="stock-name" type="text" placeholder="Item">
+        <input class="stock-price" type="text" placeholder="Price">
+        <button class="icon-button quiet danger remove-stock" type="button" title="Remove shop item">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </div>
+    </template>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
