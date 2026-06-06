@@ -41,7 +41,7 @@
       "type": "shop",
       "name": "Rössle",
       "notes": "Essen",
-      "logo": "assets/logos/Rössle.png",
+      "logo": "assets/logos/Roessle.png",
       "lat": 48.52307,
       "lng": 9.34098,
       "stock": [
@@ -67,7 +67,7 @@
       "type": "shop",
       "name": "Eisdiele La Dolce Vita",
       "notes": "Eis",
-      "logo": "assets/logos/La_Dolce_Vita Small.png",
+      "logo": "assets/logos/La_Dolce_Vita_Small.png",
       "lat": 48.52308,
       "lng": 9.34124,
       "stock": [
@@ -114,7 +114,7 @@
       "type": "shop",
       "name": "Brennerei Straßer",
       "notes": "Drinks",
-      "logo": "assets/logos/Brennere_Straßer.png",
+      "logo": "assets/logos/Brennerei_Strasser.png",
       "lat": 48.52307,
       "lng": 9.34214,
       "stock": [

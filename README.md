@@ -13,7 +13,7 @@ Data is saved in the browser with `localStorage`. Shops, DJs, items, parking, to
 Put logo image files in `assets/logos/` and enter their relative path in the editor's Logo Path / URL field, for example:
 
 ```text
-assets/logos/METZGEREI.png
+assets/logos/Roessle.png
 ```
 
 This keeps `event-map-data.json` small and works well on GitHub Pages. The Upload Logo button still works for quick tests, but it embeds the image into the exported JSON.
